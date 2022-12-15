@@ -1,2 +1,38 @@
 # UpdateChecker-Windows-11-
 It's a Powershell Script that Will Search and Install Updates Automaticly
+
+Q: How Does it Work?
+A:It uses the Get-Update Command to retrieve information
+  about Windows updates that are available to be installed on the local computer.
+  And Installs them Automaticly With the Install Command.
+
+Q: How do I use the App?
+A:After you did all the Steps below, The Powershell should start and run the script after you logged onto your PC
+  you can Just minimize powerhell and wait until it Found Updates and Installed them. It should Close Powershell
+  Automaticly after it's done if not, it's visible if it's finished.
+
+!HOW TO DOWNLOAD!
+
+Before:
+1.Put the Entire Folder into "C:\"
+
+Steps In Powershell:
+1.Open Poweshell as Admin.
+2.Enter "set-executionpolicy remotesigned" In the Commandline and Press A after It's done.
+3.Enter "Install-Module PSWindowsUpdate" In The Commandline After you did the Step Above.
+4.Enter "Import-Module PSWindowsUpdate" In The Commandline After you did the Step Above.
+
+In Taskscheduler:
+1.Open Taskscheduler
+2.Create a Simple Task
+3.Select in Trigger "On Registration"
+4.Select Start Program in The Next Register.
+5.Enter This in Program/Script " C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "
+6.Enter This in Arguments " C:\UpdateChecker\CheckUpdate.ps1 "
+7.Right Click on the Task you just created and Select Properties
+8.Go to the Conditions Tab and Uncheck everything
+9.Go to the General Tab and Check "Run as Admin/Highest Privileges"
+
+AND DONE.
+
+It's my first Script so if the Download Tutorial is not helpful or some bugs are popping up let me know.
